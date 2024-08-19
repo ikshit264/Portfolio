@@ -1,0 +1,73 @@
+.custom-handle {
+    position: absolute;
+    background: transparent;
+  }
+  
+  .custom-handle::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #225AD8;
+  }
+  
+  /* Top Handle */
+  .handle-n {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ns-resize;
+  }
+  
+  /* Bottom Handle */
+  .handle-s {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ns-resize;
+  }
+  
+  /* Left Handle */
+  .handle-w {
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: ew-resize;
+  }
+  
+  /* Right Handle */
+  .handle-e {
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: ew-resize;
+  }
+  
+  /* Top-Left Handle */
+  .handle-nw {
+    top: -5px;
+    left: -5px;
+    cursor: nwse-resize;
+  }
+  
+  /* Top-Right Handle */
+  .handle-ne {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+  }
+  
+  /* Bottom-Left Handle */
+  .handle-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+  }
+  
+  /* Bottom-Right Handle */
+  .handle-se {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+  }
+  

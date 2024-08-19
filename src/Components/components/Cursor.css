@@ -1,0 +1,13 @@
+.cursor {
+    animation: cursorClose 4s 0.2s forwards;
+    position: relative; /* Ensure the element can be positioned */
+}
+
+@keyframes cursorClose {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 100px;
+    }
+}
