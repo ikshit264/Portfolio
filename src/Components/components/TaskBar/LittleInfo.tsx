@@ -6,7 +6,7 @@ const LittleInfo = () => {
       <div className='text-center'>
         <h1 className='text-xl font-bold text-[#000080]'>Good Morning Bhai!</h1>
         <p className='text-sm mt-2 text-[#000000]'>Welcome to my portfolio site.</p>
-        <p className='text-sm text-[#000000]'>I'm Ikshit Talera, and I'm passionate about building exceptional web experiences.</p>
+        <p className='text-sm text-[#000000]'>I&apos;m Ikshit Talera, and I&apos;m passionate about building exceptional web experiences.</p>
         <a 
           href='https://github.com/YourGithubUsername'
           target='_blank' 

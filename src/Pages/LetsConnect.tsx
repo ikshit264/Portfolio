@@ -30,7 +30,7 @@ const LetsconnectForm = () => {
         className="text-3xl font-bold mb-6 text-center text-black"
         style={{ fontFamily: 'Courier New, monospace' }}
       >
-        Let's Connect
+        Let&apos;s Connect
       </h2>
       <form
         onSubmit={handleSubmit}

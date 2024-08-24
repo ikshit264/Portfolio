@@ -49,8 +49,8 @@ const StartButton: React.FC<ChildComponentProps> = () => {
   return (
     <div className='relative' ref={startButtonRef}>
       {Start && (
-        <div className='absolute bottom-full' ref={startComponentsRef}>
-          <StartComponents Open={Open} Max={Max} Min={Min} makeTrue={makeTrue} makeFalse={makeFalse} setIsClicked={()=>handleClick()}/>
+        <div className='absolute bottom-full' ref={startComponentsRef} onClick={()=>handleClick()}>
+          <StartComponents Open={Open} Max={Max} Min={Min} makeTrue={makeTrue} makeFalse={makeFalse} />
         </div>
       )}
       <div onClick={handleClick} className='flex gap-3 cursor-pointer'>

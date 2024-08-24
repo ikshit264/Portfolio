@@ -8,12 +8,13 @@ import Image from 'next/image';
 import StartMenu from './components/TaskBar/StartMenu';
 import { useStateErrorManagement } from '@/recoil/useStateErrorManagement';
 import { ErrorData } from '@/Data/All-Error-Data';
+import { IsFrontErrorState } from '@/recoil/atoms';
 
 
 const ParentComponent: React.FC = () => {
 
     const { Open, Min, Max, IsFront, makeFalse, makeTrue } = useStateManagement();
-    const { OpenError, MinError, MaxError, makeErrorFalse, makeErrorTrue } = useStateErrorManagement();
+    const { OpenError, MinError, MaxError, makeErrorFalse, makeErrorTrue, IsFrontError } = useStateErrorManagement();
 
     return (
         <div className='relative max-h-screen'>
@@ -37,7 +38,7 @@ const ParentComponent: React.FC = () => {
             </div>
             <div className="">
                 {AllFolders.map((folder, index) => (
-                    <div key={index} className={`bg-black absolute top-0 `}>
+                    <div key={index} className={` absolute top-0 `}>
                         {Open[index] && (<Template
                             Title={folder.title}
                             icon={folder.IconClose}
@@ -55,7 +56,7 @@ const ParentComponent: React.FC = () => {
             </div>
             <div className="">
                 {ErrorData.map((folder, index) => (
-                    <div key={index} className={`bg-black absolute top-0 ${(IsFront === index )? 'z-50' : 'z-10'}`} onClick={()=>{makeTrue(index, 'open')}}>
+                    <div key={index} className={` absolute top-0 `} >
                         {OpenError[index] && (<Template
                             Title={folder.title}
                             icon={folder.IconClose}
@@ -71,14 +72,6 @@ const ParentComponent: React.FC = () => {
                     </div>
                 ))}
             </div>
-
-            {/* <ChildComponent
-                Open={Open}
-                Max={Max}
-                Min={Min}
-                makeTrue={makeTrue}
-                makeFalse={makeFalse}
-            /> */}
             <StartMenu Open={Open}
                 Max={Max}
                 Min={Min}

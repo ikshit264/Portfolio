@@ -1,73 +1,68 @@
-.custom-handle {
+/* Style for resizable handles */
+.handle-n, .handle-s, .handle-e, .handle-w {
     position: absolute;
-    background: transparent;
-  }
-  
-  .custom-handle::before {
-    content: '';
-    display: block;
+    background-color: transparent;
+}
+
+.handle-n {
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    cursor: ns-resize;
+}
+
+.handle-s {
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    cursor: ns-resize;
+}
+
+.handle-e {
+    top: 0;
+    bottom: 0;
+    right: -2px;
+    width: 5px;
+    cursor: ew-resize;
+}
+
+.handle-w {
+    top: 0;
+    bottom: 0;
+    left: -2px;
+    width: 5px;
+    cursor: ew-resize;
+}
+
+.handle-ne, .handle-nw, .handle-se, .handle-sw {
+    position: absolute;
+    background-color: transparent;
     width: 10px;
     height: 10px;
-    background-color: #225AD8;
-  }
-  
-  /* Top Handle */
-  .handle-n {
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: ns-resize;
-  }
-  
-  /* Bottom Handle */
-  .handle-s {
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: ns-resize;
-  }
-  
-  /* Left Handle */
-  .handle-w {
-    left: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: ew-resize;
-  }
-  
-  /* Right Handle */
-  .handle-e {
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: ew-resize;
-  }
-  
-  /* Top-Left Handle */
-  .handle-nw {
-    top: -5px;
-    left: -5px;
-    cursor: nwse-resize;
-  }
-  
-  /* Top-Right Handle */
-  .handle-ne {
-    top: -5px;
-    right: -5px;
+}
+
+.handle-ne {
+    top: -2px;
+    right: -2px;
     cursor: nesw-resize;
-  }
-  
-  /* Bottom-Left Handle */
-  .handle-sw {
-    bottom: -5px;
-    left: -5px;
-    cursor: nesw-resize;
-  }
-  
-  /* Bottom-Right Handle */
-  .handle-se {
-    bottom: -5px;
-    right: -5px;
+}
+
+.handle-nw {
+    top: -2px;
+    left: -2px;
     cursor: nwse-resize;
-  }
-  
+}
+
+.handle-se {
+    bottom: -2px;
+    right: -2px;
+    cursor: nwse-resize;
+}
+
+.handle-sw {
+    bottom: -2px;
+    left: -2px;
+    cursor: nesw-resize;
+}

@@ -2,10 +2,6 @@ import RecentDoc from '@/../public/Recent_Documents.png';
 import Search from '@/../public/Search.png';
 import Run from '@/../public/Run.png';
 import MSN from '@/../public/MSN.png';
-// import Paint from '@/../public/Paint.png';
-// import Minesweeper from '@/../public/Minesweeper.png';
-// import Windows_Media from '@/../public/Windows_Media.png';
-// import Music_App from '@/../public/Music_App.png';
 import MyDoc from '@/../public/MyDocuments.png';
 import My_Pictures from '@/../public/My_Pictures.png';
 import My_Music from '@/../public/My_Music.png';
@@ -25,97 +21,113 @@ export interface StartMenuProps {
     description ?: String;
     list ?: StartMenuProps[];
     Tab : 'SimpleTab' | 'ErrorTab' | 'CMD';
+    Position : {x : number, y : number};
 }
+
+// Helper function to generate random positions between 1 and 150
+const getRandomPosition = () => ({
+    x: Math.floor(Math.random() * 400) + 400,
+    y: Math.floor(Math.random() * 150) + 100,
+});
+
 export const ErrorData: StartMenuProps[] = [
     {
         title: 'My Documents',
         IconClose: MyDoc,
-        Tab : 'ErrorTab'
+        Tab: 'ErrorTab',
+        Position: {x:150, y:150},
     },
     {
         title: 'My Recent Documents',
         IconClose: RecentDoc,
-        Tab : 'ErrorTab',
-        list: [{ title: '(Empty)', Tab : 'ErrorTab'}],
+        Tab: 'ErrorTab',
+        list: [{ title: '(Empty)', Tab: 'ErrorTab', Position: getRandomPosition() }],
+        Position: getRandomPosition(),
     },
     {
         title: 'My Picture',
         IconClose: My_Pictures,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'My Music',
         IconClose: My_Music,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'My Computer',
         IconClose: My_Computer,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'none',
         IconClose: My_Computer,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Control Panel',
         IconClose: Control_Panel,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Set Program Access and Defaults',
         IconClose: Default_Programs,
-        Tab : 'ErrorTab'
-
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Connect To',
         IconClose: Network_Connections,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
         list: [
             {
                 title: 'MSN',
                 IconClose: MSN,
-                Tab : 'ErrorTab',
-
+                Tab: 'ErrorTab',
+                Position: getRandomPosition(),
             },
             {
                 title: 'Show all Connections',
                 IconClose: Network_Connections,
-                Tab : 'ErrorTab',
-
+                Tab: 'ErrorTab',
+                Position: getRandomPosition(),
             }
-        ]
+        ],
     },
     {
         title: 'Printers and Faxes',
         IconClose: Printer,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'none',
         IconClose: Printer,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Help and Support',
         IconClose: Help_and_Support,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Search',
         IconClose: Search,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
     {
         title: 'Run...',
         IconClose: Run,
-        Tab : 'ErrorTab',
+        Tab: 'ErrorTab',
+        Position: getRandomPosition(),
     },
 ];

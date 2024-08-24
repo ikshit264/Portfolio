@@ -18,8 +18,13 @@ const allFolderErrorState = selector({
   }
 })
 
-export const IsFrontState = atom<number>({
+export const IsFrontState = atom<Number>({
   key: 'IsFrontState',
+  default: 0,
+});
+
+export const IsFrontErrorState = atom<Number>({
+  key: 'IsFrontErrorState',
   default: 0,
 });
 

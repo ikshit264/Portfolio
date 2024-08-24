@@ -1,13 +1,10 @@
 import Help_and_Support from '@/../public/Help_and_Support.png';
 import CMD_img from "@/../public/Command_Prompt.png";
 import ClosedFolder from '@/../public/Folder_Closed.png';
-import Public_Close from '@/../public/Shared_Folder_Close.png';
 import OpenedFolder from '@/../public/Folder_Opened.png';
-import Public_Open from '@/../public/Shared_Folder_Open.png';
 import MyComputerimg from '@/../public/My_Computer.png';
 import AboutMe from "@/Pages/AboutMe";
 import LetsConnect from "@/Pages/LetsConnect";
-import Make_Yourself_Public from "@/Pages/Make_Yourself_Public";
 import SkillSet from '@/Pages/SkillSet';
 import MyComputer from '@/Pages/MyComputer';
 import CMD from '@/Components/TabTypes/CMD';
@@ -23,7 +20,16 @@ export interface AllFoldersProps {
     IconOpen: StaticImageData;
     Component: React.ComponentType<any>;
     Tab: 'SimpleTab' | 'ErrorTab' | 'CMD';
+    list ?: AllFoldersProps[];
+    description ?: String;
+    Position : {x : number, y : number}
 }
+
+// Helper function to generate random positions between 1 and 150
+const getRandomPosition = () => ({
+    x: Math.floor(Math.random() * 150) + 1,
+    y: Math.floor(Math.random() * 150) + 1,
+});
 
 export const AllFolders: AllFoldersProps[] = [
     {
@@ -31,7 +37,9 @@ export const AllFolders: AllFoldersProps[] = [
         IconClose: ClosedFolder,
         IconOpen: OpenedFolder,
         Component: LetsConnect,
-        Tab: "SimpleTab", // All use SimpleTab
+        Tab: "SimpleTab",
+        Position : getRandomPosition(),
+        
     },
     {
         title: "My Computer",
@@ -39,6 +47,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: MyComputerimg,
         Component: MyComputer,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "Skill Set",
@@ -46,6 +56,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: OpenedFolder,
         Component: SkillSet,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "Help",
@@ -53,6 +65,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: Help_and_Support,
         Component: InfoTabs,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "CMD",
@@ -60,6 +74,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: CMD_img,
         Component: CMD,
         Tab: "CMD", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "Experience",
@@ -67,6 +83,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: OpenedFolder,
         Component: Experience,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "Projects",
@@ -74,6 +92,8 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: OpenedFolder,
         Component: Projects,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
     {
         title: "About Me",
@@ -81,5 +101,7 @@ export const AllFolders: AllFoldersProps[] = [
         IconOpen: OpenedFolder,
         Component: AboutMe,
         Tab: "SimpleTab", // All use SimpleTab
+        Position : getRandomPosition(),
+
     },
 ];

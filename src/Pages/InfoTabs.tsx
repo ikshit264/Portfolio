@@ -19,7 +19,7 @@ const tabContent = {
 const InfoTabs = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isVertical, setIsVertical] = useState(true);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const updateLayout = useCallback(() => {
     if (containerRef.current) {

@@ -10,22 +10,19 @@ const AllOpenTabs: React.FC<ChildComponentProps> = () => {
   const [AllOpen, setAllOpen] = useState<number[]>([]);
 
   useEffect(() => {
-    const updatedAllOpen = [...AllOpen];
-    Open.forEach((isOpen, index) => {
-      if (isOpen && !updatedAllOpen.includes(index)) {
-        updatedAllOpen.push(index);
-      } else if (!isOpen && updatedAllOpen.includes(index)) {
-        updatedAllOpen.splice(updatedAllOpen.indexOf(index), 1);
-      }
-    });
+    // Directly derive AllOpen from Open
+    const updatedAllOpen = Open
+      .map((isOpen, index) => isOpen ? index : null)
+      .filter(index => index !== null) as number[];
+
     setAllOpen(updatedAllOpen);
-  }, [Open]);
+  }, [Open]); // Only depend on Open
 
   return (
     <div className='flex h-full flex-nowrap gap-1 overflow-x-auto max-w-full'>
       <div className='flex'>
         {AllOpen.map((index) => (
-          <div key={index} className='pr-10'>
+          <div key={index} className='pr-2'>
             <OpenTab
               Max={Max}
               Min={Min}

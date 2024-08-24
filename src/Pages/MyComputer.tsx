@@ -26,7 +26,7 @@ const MyComputer: React.FC = () => {
           </div>
           <div className="flex flex-col items-center">
             <Image src={UserDocsIcon} alt="User's Documents" width={40} height={40} />
-            <span className="text-xs mt-1 text-center">User's Documents</span>
+            <span className="text-xs mt-1 text-center">User&apos;s Documents</span>
           </div>
         </div>
       </section>
